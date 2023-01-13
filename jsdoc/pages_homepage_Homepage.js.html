@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/homepage/Homepage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/homepage/Homepage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import HorizontalNav from "../../components/horizontalNav/HorizontalNav";
+import VerticalNav from "../../components/verticalNav/VerticalNav";
+import { userUseState } from "../../data/initUseStates";
+import FetchError from "../../components/fetchError/FetchError";
+import logo from "../../assets/icon-logo.svg";
+
+// // IMPORT CALLS API DATA
+import { getMainUserData } from "../../service/getDataAPI";
+
+// // IMPORT MOCK DATA
+// import {
+//   getMainMockedData,
+// } from "../../service/getDataMocked";
+
+/**
+ * Component React for display page Homepage
+ * @component
+ */
+const Homepage = () => {
+  /**
+   * User's id number collected by a hook in the page's URL
+   * @constant
+   * @type {number}
+   */
+  const { userID } = useParams();
+  /**
+   * Hook to define calls api status
+   * @constant
+   * @type {boolean}
+   */
+  const [fetchData, setFetchData] = useState(false);
+  /**
+   * Hook to define message error when calls api data fails
+   * @constant
+   * @type {string}
+   */
+  const [apiError, setApiError] = useState("");
+  /**
+   * Hook to define loader status.
+   * @constant
+   * @type {boolean}
+   */
+  const [loader, setLoader] = useState(true);
+
+  const [dataUser, setDataUser] = useState(userUseState);
+
+  useEffect(() => {
+    setLoader(true);
+    window.scrollTo(0, 0);
+
+    // // USE DATA MOCKED
+    // setDataUser(getMainMockedData(userID));
+
+    /**
+     * Calls from api and set each data used for charts
+     * @async
+     * @returns {void}
+     */
+    let getAllData = async () => {
+      try {
+        let promiseAllData = await Promise.all([getMainUserData(userID)]);
+        setFetchData(true);
+        setDataUser(promiseAllData[0]);
+      } catch (error) {
+        setLoader(false);
+        setFetchData(false);
+        setApiError(error.message);
+        console.log(error);
+      }
+    };
+    getAllData();
+  }, [userID]);
+
+  return (
+    &lt;div className="page_container">
+      &lt;HorizontalNav />
+      &lt;VerticalNav />
+      {fetchData === true ? (
+        &lt;main className="pageHome_main">
+          &lt;section className="mainSection_welcome">
+            &lt;h1>
+              Bienvenue sur votre espace personnel{" "}
+              &lt;span>{dataUser.userInfos.firstName}&lt;/span>
+            &lt;/h1>
+            &lt;img src={logo} alt="logo sportsee" width="200px" />
+            &lt;p className="logo_title">SportSee&lt;/p>
+          &lt;/section>
+        &lt;/main>
+      ) : (
+        &lt;FetchError apiError={apiError} loader={loader} />
+      )}
+    &lt;/div>
+  );
+};
+
+export default Homepage;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="modelActivityData.html">modelActivityData</a></li><li><a href="modelPerfData.html">modelPerfData</a></li><li><a href="modelSessionsData.html">modelSessionsData</a></li><li><a href="modelUserMainData.html">modelUserMainData</a></li></ul><h3>Global</h3><ul><li><a href="global.html#activityUseState">activityUseState</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#BarChartActivity">BarChartActivity</a></li><li><a href="global.html#BarChartCursor">BarChartCursor</a></li><li><a href="global.html#BarChartLegend">BarChartLegend</a></li><li><a href="global.html#BarChartTooltip">BarChartTooltip</a></li><li><a href="global.html#Community">Community</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#FetchError">FetchError</a></li><li><a href="global.html#getActivityData">getActivityData</a></li><li><a href="global.html#getActivityMockedData">getActivityMockedData</a></li><li><a href="global.html#getMainMockedData">getMainMockedData</a></li><li><a href="global.html#getMainUserData">getMainUserData</a></li><li><a href="global.html#getPerfMockedData">getPerfMockedData</a></li><li><a href="global.html#getPerformanceData">getPerformanceData</a></li><li><a href="global.html#getSessionsData">getSessionsData</a></li><li><a href="global.html#getSessionsMockedData">getSessionsMockedData</a></li><li><a href="global.html#Homepage">Homepage</a></li><li><a href="global.html#HorizontalNav">HorizontalNav</a></li><li><a href="global.html#KeyFiguresCard">KeyFiguresCard</a></li><li><a href="global.html#LineChartCursor">LineChartCursor</a></li><li><a href="global.html#LineChartLegend">LineChartLegend</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#LineChartTooltip">LineChartTooltip</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#perfUseState">perfUseState</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialBarCircle">RadialBarCircle</a></li><li><a href="global.html#RadialBarLegend">RadialBarLegend</a></li><li><a href="global.html#RadialBarScore">RadialBarScore</a></li><li><a href="global.html#SectionHello">SectionHello</a></li><li><a href="global.html#sessionsUseState">sessionsUseState</a></li><li><a href="global.html#Setting">Setting</a></li><li><a href="global.html#userUseState">userUseState</a></li><li><a href="global.html#VerticalNav">VerticalNav</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Oct 08 2022 21:32:51 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

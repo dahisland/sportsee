@@ -1,0 +1,60 @@
+@import "../../style/utils";
+
+.radialBar_score {
+  @include resetMargin;
+  width: 32%;
+  height: 263px;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+  position: relative;
+  @include responsiveDesktop {
+    height: 200px;
+  }
+  h2 {
+    @include resetMargin;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    color: #20253a;
+    font-size: 15px;
+    font-weight: map-get($weights, base);
+  }
+  .radialBarScore_circle {
+    position: absolute;
+    @include responsiveDesktop {
+      circle {
+        r: 26%;
+      }
+    }
+  }
+}
+
+// Legend radialBar
+
+.radialBarScore_figcaption {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 24px;
+  @include responsiveDesktop {
+    line-height: 18px;
+  }
+  p {
+    padding: 0 30%;
+    height: fit-content;
+    color: #74798c;
+    font-size: 16px;
+    font-weight: map-get($weights, base);
+    @include responsiveDesktop {
+      font-size: 13px;
+    }
+    span {
+      color: #282d30;
+      font-size: 26px;
+      font-weight: map-get($weights, boldy);
+      @include responsiveDesktop {
+        font-size: 20px;
+      }
+    }
+  }
+}

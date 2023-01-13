@@ -1,0 +1,38 @@
+@import "./utils";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include resetMargin;
+  font-family: "Roboto", sans-serif;
+  font-size: map-get($sizes, base);
+  font-weight: map-get($weights, base);
+  line-height: map-get($sizes, xl);
+}
+
+main {
+  @include resetMargin;
+  padding: 50px 50px 50px 167px;
+  width: 100%;
+}
+
+ul,
+li,
+h1,
+p {
+  @include resetMargin;
+  list-style-type: none;
+}
+
+a {
+  color: map-get($colors, snow);
+  text-decoration: none;
+  &:hover,
+  &:visited,
+  &:active {
+    color: map-get($colors, snow);
+    text-decoration: none;
+  }
+}

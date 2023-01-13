@@ -1,0 +1,39 @@
+@import "../../style/utils";
+
+.lineChart_sessions {
+  @include resetMargin;
+  background-color: #ff0000;
+  width: 32%;
+  height: 263px;
+  border-radius: 10px;
+  overflow: hidden;
+  @include responsiveDesktop {
+    height: 200px;
+  }
+}
+
+// Customized tooltip lineChart
+
+.sessions_toolTip {
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 8px;
+  font-weight: map-get($weights, base);
+  text-align: center;
+  padding: 2px 10px;
+}
+
+// Legend lineChart
+
+.lineChartSessions_figcaption {
+  h2 {
+    position: absolute;
+    left: 13%;
+    margin-top: 10%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    font-weight: map-get($weights, base);
+    width: 147px;
+  }
+}

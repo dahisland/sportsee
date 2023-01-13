@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: data/initUseStates.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: data/initUseStates.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Javascript file containing objects used to init useState() in the Homepage component
+ * @file
+ */
+
+/**
+ * Object containing main user data structure with 'undefined' default values, after data has been called and formatted
+ * @constant
+ * @type {object}
+ */
+export const userUseState = {
+  id: undefined,
+  userInfos: {
+    firstName: undefined,
+    lastName: undefined,
+    age: undefined,
+  },
+  todayScore: [
+    { name: undefined, value: undefined, fill: undefined },
+    { name: undefined, value: undefined, fill: undefined },
+  ],
+  keyData: [
+    {
+      label: undefined,
+      count: undefined,
+      icon: undefined,
+    },
+  ],
+};
+
+/**
+ * Object containing user Activity data structure with 'undefined' default values, after data has been called and formatted
+ * @constant
+ * @type {object}
+ */
+export const activityUseState = {
+  userId: undefined,
+  sessions: [
+    {
+      day: undefined,
+      dayFormatted: undefined,
+      kilogram: undefined,
+      calories: undefined,
+    },
+  ],
+};
+
+/**
+ * Object containing user Sessions data structure with 'undefined' default values, after data has been called and formatted
+ * @constant
+ * @type {object}
+ */
+export const sessionsUseState = {
+  userId: undefined,
+  sessions: [
+    {
+      day: undefined,
+      dayLabel: undefined,
+      sessionLength: undefined,
+    },
+  ],
+};
+
+/**
+ * Object containing user Performance data structure with 'undefined' default values, after data has been called and formatted
+ * @constant
+ * @type {object}
+ */
+export const perfUseState = {
+  userId: undefined,
+  kind: [[undefined, undefined]],
+  data: [
+    {
+      value: undefined,
+      kind: undefined,
+      subject: undefined,
+    },
+  ],
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="modelActivityData.html">modelActivityData</a></li><li><a href="modelPerfData.html">modelPerfData</a></li><li><a href="modelSessionsData.html">modelSessionsData</a></li><li><a href="modelUserMainData.html">modelUserMainData</a></li></ul><h3>Global</h3><ul><li><a href="global.html#activityUseState">activityUseState</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#BarChartActivity">BarChartActivity</a></li><li><a href="global.html#BarChartCursor">BarChartCursor</a></li><li><a href="global.html#BarChartLegend">BarChartLegend</a></li><li><a href="global.html#BarChartTooltip">BarChartTooltip</a></li><li><a href="global.html#Community">Community</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#FetchError">FetchError</a></li><li><a href="global.html#getActivityData">getActivityData</a></li><li><a href="global.html#getActivityMockedData">getActivityMockedData</a></li><li><a href="global.html#getMainMockedData">getMainMockedData</a></li><li><a href="global.html#getMainUserData">getMainUserData</a></li><li><a href="global.html#getPerfMockedData">getPerfMockedData</a></li><li><a href="global.html#getPerformanceData">getPerformanceData</a></li><li><a href="global.html#getSessionsData">getSessionsData</a></li><li><a href="global.html#getSessionsMockedData">getSessionsMockedData</a></li><li><a href="global.html#Homepage">Homepage</a></li><li><a href="global.html#HorizontalNav">HorizontalNav</a></li><li><a href="global.html#KeyFiguresCard">KeyFiguresCard</a></li><li><a href="global.html#LineChartCursor">LineChartCursor</a></li><li><a href="global.html#LineChartLegend">LineChartLegend</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#LineChartTooltip">LineChartTooltip</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#perfUseState">perfUseState</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialBarCircle">RadialBarCircle</a></li><li><a href="global.html#RadialBarLegend">RadialBarLegend</a></li><li><a href="global.html#RadialBarScore">RadialBarScore</a></li><li><a href="global.html#SectionHello">SectionHello</a></li><li><a href="global.html#sessionsUseState">sessionsUseState</a></li><li><a href="global.html#Setting">Setting</a></li><li><a href="global.html#userUseState">userUseState</a></li><li><a href="global.html#VerticalNav">VerticalNav</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Oct 08 2022 21:32:51 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

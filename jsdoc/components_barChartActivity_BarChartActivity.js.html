@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/barChartActivity/BarChartActivity.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/barChartActivity/BarChartActivity.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import PropTypes from "prop-types";
+import {
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Bar,
+  ResponsiveContainer,
+} from "recharts";
+import BarChartLegend from "./BarChartLegend";
+import BarChartTooltip from "./BarChartTooltip";
+import BarChartCursor from "./BarChartCursor";
+
+/**
+ * Component React for display the bar chart showing activity statistics of user
+ * @component
+ */
+const BarChartActivity = ({ dataActivity }) => {
+  /**
+   * Collect the minimal data weight value to define barChart's ticks values
+   * @type {number}
+   */
+  let minWeight = dataActivity[0].kilogram;
+  /**
+   * Collect the maximal data weight value to define barChart's ticks values
+   * @type {number}
+   */
+  let maxWeight = dataActivity[dataActivity.length - 1].kilogram;
+  /**
+   * Calculate average data weight value to define barChart's ticks values
+   * @type {number}
+   */
+  let middleWeight = minWeight + (maxWeight - minWeight) / 2;
+
+  return (
+    &lt;figure className="barChart_activity">
+      &lt;ResponsiveContainer width="100%" height={320}>
+        &lt;BarChart
+          data={dataActivity}
+          barSize={7}
+          barGap={8}
+          reverseStackOrder={true}
+          margin={{ top: 15, right: 40, bottom: 30, left: 40 }}
+        >
+          &lt;Legend
+            verticalAlign="top"
+            iconSize={8}
+            content={&lt;BarChartLegend />}
+          />
+          &lt;CartesianGrid
+            vertical={false}
+            strokeDasharray="2 2"
+            stroke={"#DEDEDE"}
+          />
+          &lt;XAxis
+            dataKey="dayFormatted"
+            type="number"
+            tickCount={dataActivity.length}
+            domain={["dataMin", "dataMax"]}
+            tickSize={0}
+            // tickMargin={20}
+            dy={20}
+            fontSize={14}
+            tick={{ fill: "#9B9EAC" }}
+            textAnchor="middle"
+            stroke="#DEDEDE"
+            padding={{ left: 11, right: 11 }}
+          />
+          &lt;YAxis
+            type="number"
+            dataKey="kilogram"
+            yAxisId="right"
+            orientation="right"
+            domain={["dataMin", "dataMax"]}
+            tickCount={3}
+            tickSize={0}
+            ticks={[minWeight - 1, middleWeight, maxWeight + 1]}
+            axisLine={false}
+            dx={50}
+            tick={{ fill: "#9B9EAC" }}
+            fontSize={14}
+            textAnchor="middle"
+          />
+          &lt;YAxis
+            type="number"
+            dataKey="calories"
+            yAxisId="left"
+            orientation="left"
+            tickCount={3}
+            domain={["dataMin - 50", (dataMax) => dataMax + 50]}
+            hide={true}
+          />
+          &lt;Tooltip
+            content={&lt;BarChartTooltip />}
+            offset={35}
+            wrapperStyle={{ outline: "none", top: "-100px" }}
+            allowEscapeViewBox={{ x: false, y: true }}
+            isAnimationActive={false}
+            cursor={&lt;BarChartCursor />}
+          />
+          &lt;Bar
+            dataKey="calories"
+            yAxisId="left"
+            fill="#E60000"
+            unit={"Kcal"}
+            name={"Calories brûlées (KCal)"}
+            radius={[10, 10, 0, 0]}
+          />
+          &lt;Bar
+            dataKey="kilogram"
+            yAxisId="right"
+            fill="#282D30"
+            unit={"kg"}
+            name={"Poids (kg)"}
+            radius={[10, 10, 0, 0]}
+          />
+        &lt;/BarChart>
+      &lt;/ResponsiveContainer>
+    &lt;/figure>
+  );
+};
+
+BarChartActivity.propTypes = {
+  /**
+   * Array containing user activity data (weight and calories) for each week's day
+   */
+  dataActivity: PropTypes.array,
+};
+
+export default BarChartActivity;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="modelActivityData.html">modelActivityData</a></li><li><a href="modelPerfData.html">modelPerfData</a></li><li><a href="modelSessionsData.html">modelSessionsData</a></li><li><a href="modelUserMainData.html">modelUserMainData</a></li></ul><h3>Global</h3><ul><li><a href="global.html#activityUseState">activityUseState</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#BarChartActivity">BarChartActivity</a></li><li><a href="global.html#BarChartCursor">BarChartCursor</a></li><li><a href="global.html#BarChartLegend">BarChartLegend</a></li><li><a href="global.html#BarChartTooltip">BarChartTooltip</a></li><li><a href="global.html#Community">Community</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#FetchError">FetchError</a></li><li><a href="global.html#getActivityData">getActivityData</a></li><li><a href="global.html#getActivityMockedData">getActivityMockedData</a></li><li><a href="global.html#getMainMockedData">getMainMockedData</a></li><li><a href="global.html#getMainUserData">getMainUserData</a></li><li><a href="global.html#getPerfMockedData">getPerfMockedData</a></li><li><a href="global.html#getPerformanceData">getPerformanceData</a></li><li><a href="global.html#getSessionsData">getSessionsData</a></li><li><a href="global.html#getSessionsMockedData">getSessionsMockedData</a></li><li><a href="global.html#Homepage">Homepage</a></li><li><a href="global.html#HorizontalNav">HorizontalNav</a></li><li><a href="global.html#KeyFiguresCard">KeyFiguresCard</a></li><li><a href="global.html#LineChartCursor">LineChartCursor</a></li><li><a href="global.html#LineChartLegend">LineChartLegend</a></li><li><a href="global.html#LineChartSessions">LineChartSessions</a></li><li><a href="global.html#LineChartTooltip">LineChartTooltip</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#perfUseState">perfUseState</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialBarCircle">RadialBarCircle</a></li><li><a href="global.html#RadialBarLegend">RadialBarLegend</a></li><li><a href="global.html#RadialBarScore">RadialBarScore</a></li><li><a href="global.html#SectionHello">SectionHello</a></li><li><a href="global.html#sessionsUseState">sessionsUseState</a></li><li><a href="global.html#Setting">Setting</a></li><li><a href="global.html#userUseState">userUseState</a></li><li><a href="global.html#VerticalNav">VerticalNav</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Oct 08 2022 21:32:51 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

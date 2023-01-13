@@ -1,0 +1,33 @@
+@import "../../style/utils";
+
+.page_container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.pageHome_main {
+  font-size: map-get($sizes, base);
+}
+
+.mainSection_welcome {
+  text-align: center;
+  h1 {
+    font-size: map-get($sizes, max);
+    font-weight: map-get($weights, base);
+    margin-bottom: 30px;
+    line-height: map-get($sizes, max);
+    span {
+      color: map-get($colors, blood);
+    }
+  }
+  img {
+    width: 200px;
+    margin-top: 50px;
+  }
+  .logo_title {
+    font-size: map-get($sizes, max);
+    font-weight: map-get($weights, base);
+    color: map-get($colors, blood);
+    margin-top: 20px;
+  }
+}

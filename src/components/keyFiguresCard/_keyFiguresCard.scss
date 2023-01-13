@@ -1,0 +1,34 @@
+@import "../../style/utils";
+
+.keyFigures_card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10%;
+  background: rgba(251, 251, 251, 1);
+  padding: 20px 10%;
+  height: 124px;
+  color: rgba(40, 45, 48, 1);
+  border-radius: 5px;
+  picture {
+    display: block;
+    width: 60px;
+    img {
+      width: 100%;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+  .keyFiguresCard_data {
+    width: 130px;
+  }
+  .keyFiguresCard_value {
+    font-size: map-get($sizes, l);
+    font-weight: map-get($weights, boldy);
+  }
+  .keyFiguresCard_type {
+    font-size: map-get($sizes, s);
+    font-weight: map-get($weights, base);
+  }
+}

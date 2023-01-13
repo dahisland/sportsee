@@ -1,0 +1,18 @@
+@import "../../style/utils";
+
+// section welcome
+.mainSection_hello {
+  margin-bottom: 60px;
+  h1 {
+    font-size: map-get($sizes, max);
+    font-weight: map-get($weights, base);
+    margin-bottom: 30px;
+    span {
+      color: map-get($colors, blood);
+    }
+  }
+  p {
+    font-size: map-get($sizes, base);
+    font-weight: map-get($weights, slim);
+  }
+}

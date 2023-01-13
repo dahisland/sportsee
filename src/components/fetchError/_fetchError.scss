@@ -1,0 +1,38 @@
+@import "../../style/utils";
+
+.mainSection_fetchError {
+  margin-top: 70px;
+  text-align: center;
+  .fetchError_message {
+    height: 200px;
+    p {
+      padding-bottom: 20px;
+    }
+    p:nth-child(2) {
+      font-style: italic;
+      font-weight: map-get($weights, slim);
+      opacity: 0.8;
+    }
+  }
+
+  .fetchError_nav {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    p,
+    a {
+      border-radius: 10px;
+      width: 200px;
+      padding: 20px;
+      color: map-get($colors, blood);
+      border: 2px solid map-get($colors, blood);
+    }
+    p:hover,
+    a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      background: map-get($colors, blood);
+      color: map-get($colors, snow);
+    }
+  }
+}

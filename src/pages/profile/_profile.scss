@@ -1,0 +1,34 @@
+@import "../../style/utils";
+
+.page_container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.pageProfile_main {
+  font-size: map-get($sizes, base);
+}
+
+.mainSection_statistics {
+  display: flex;
+  justify-content: space-between;
+
+  // container for charts
+  .statistics_charts {
+    width: 72%;
+    height: fit-content;
+    .charts_flexboxContainer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  // container for key figures cards
+  .statistics_keyFigures {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

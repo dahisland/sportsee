@@ -1,0 +1,54 @@
+@import "../../style/utils";
+
+@keyframes spinner-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  margin: 0px 0px 50px 117px;
+  min-height: 80vh;
+  position: relative;
+}
+
+.loader_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: map-get($colors, white);
+  z-index: 1;
+
+  .loaderContainer_spinner {
+    width: 50px;
+    height: 50px;
+    background-image: url("../../assets/icon-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    position: relative;
+    opacity: 0.6;
+  }
+
+  .spinner_anim {
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    border: 4px solid;
+    border-color: red black white;
+    border-radius: 50%;
+    animation: spinner-anim 1000ms linear infinite;
+    opacity: 0.5;
+  }
+}
