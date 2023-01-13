@@ -10,7 +10,8 @@
 
 Sportsee is a sport's coaching startup that offers services to visualize sport's training progression on
 his application with graphics and statistics following.
-This project is a light version using data mock.
+This project is a light version using data mock of a project using an API.
+Full project with API backend is available ([here](https://github.com/dahisland/MyriamMornet_12_092022)).
 
 ## TECHNOLOGIES
 
