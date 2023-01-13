@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
 import Profile from "./pages/profile/Profile";
 import Setting from "./pages/setting/Setting";
@@ -12,7 +12,7 @@ import Login from "./pages/login/Login";
  */
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/homepage/:userID" element={<Homepage />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/community/:userID" element={<Community />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
