@@ -5,11 +5,14 @@ import PropTypes from "prop-types";
  * Component React for display the proteins, lipids, calories and carbohydrates cards informations
  * @component
  */
-const KeyFiguresCard = ({ image, name, value }) => {
+const KeyFiguresCard = ({ image, value, name }) => {
   return (
     <div className="keyFigures_card">
       <picture>
-        <img src={"./img/" + image} alt={"icon " + name}></img>
+        <img
+          src={image !== undefined ? "./img/" + image : null}
+          alt={"icon " + name}
+        ></img>
       </picture>
       <div className="keyFiguresCard_data">
         <p className="keyFiguresCard_value">{value}</p>
