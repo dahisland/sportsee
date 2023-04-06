@@ -9,7 +9,7 @@ const KeyFiguresCard = ({ image, name, value }) => {
   return (
     <div className="keyFigures_card">
       <picture>
-        <img src={"../../img/" + image} alt={"icon " + name}></img>
+        <img src={"./img/" + image} alt={"icon " + name}></img>
       </picture>
       <div className="keyFiguresCard_data">
         <p className="keyFiguresCard_value">{value}</p>
