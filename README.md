@@ -1,9 +1,13 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](./readme-assets/html5-badge.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](./readme-assets/react-badge.svg)](https://forthebadge.com)
+[![forthebadge](./readme-assets/uses-recharts.svg)](https://forthebadge.com)
+
 <br/>
 
 <div id="header" align="left">
-  <img src="./sportsee/src/assets/logo.svg" width="200"/>
+  <img src="./readme-assets/logo.svg" width="200"/>
 </div>
 
 # SPORTSEE : Training coaching
@@ -18,6 +22,7 @@ Full project with API backend is available ([here](https://github.com/dahisland/
 - JS
 - CSS with Sass
 - React
+- Recharts
 
 ## PROJECT'S INSTALLATION
 
