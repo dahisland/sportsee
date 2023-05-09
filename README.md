@@ -15,7 +15,7 @@
 Sportsee is a sport's coaching startup that offers services to visualize sport's training progression on
 his application with graphics and statistics following.
 This project is a light version using data mock of a project using an API.
-Full project with API backend is available ([here](https://github.com/dahisland/MyriamMornet_12_092022)).
+Full project with API backend is available ([here](https://github.com/dahisland/sportsee-fullstack)).
 
 ## TECHNOLOGIES
 
@@ -40,9 +40,9 @@ Full project with API backend is available ([here](https://github.com/dahisland/
 
 Local url by default is : `http://localhost:3006/`.
 
-You can customize local port by changing it on your local file [sportsee/package.json](https://github.com/dahisland/MyriamMornet_12_092022/blob/main/sportsee/package.json) (line 20) : <br/>
+You can customize local port by changing it on your local file [sportsee/package.json](https://github.com/dahisland/sportsee/blob/main/sportsee/package.json) (line 22) : <br/>
 `"scripts": {"start": "set PORT=3006 && react-scripts start"}`.
 
-## FULL PROJECT WITH BACKEND
+## GIT PAGES
 
-You can find full project with backend in this repository : https://github.com/dahisland/sportsee-app
+The hosted project is available [here](https://dahisland.github.io/sportsee/).
