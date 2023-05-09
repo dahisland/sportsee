@@ -40,7 +40,7 @@ Full project with API backend is available ([here](https://github.com/dahisland/
 
 Local url by default is : `http://localhost:3006/`.
 
-You can customize local port by changing it on your local file [sportsee/package.json](https://github.com/dahisland/sportsee/blob/main/sportsee/package.json) (line 22) : <br/>
+You can customize local port by changing it on your local file [sportsee/package.json](https://github.com/dahisland/sportsee/blob/main/package.json) (line 22) : <br/>
 `"scripts": {"start": "set PORT=3006 && react-scripts start"}`.
 
 ## GIT PAGES
